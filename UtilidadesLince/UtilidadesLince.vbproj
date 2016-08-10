@@ -128,10 +128,10 @@
     <Compile Include="Controlador\ArticuloLince.vb" />
     <Compile Include="Controlador\GrupoLince.vb" />
     <Compile Include="Modelo\ConectarDBF.vb" />
-    <Compile Include="Vista\ControlInventarios.Designer.vb">
-      <DependentUpon>ControlInventarios.vb</DependentUpon>
+    <Compile Include="Vista\ControlDeInventarios.Designer.vb">
+      <DependentUpon>ControlDeInventarios.vb</DependentUpon>
     </Compile>
-    <Compile Include="Vista\ControlInventarios.vb">
+    <Compile Include="Vista\ControlDeInventarios.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vista\Equivalenciador.vb">
@@ -164,8 +164,8 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Vista\ControlInventarios.resx">
-      <DependentUpon>ControlInventarios.vb</DependentUpon>
+    <EmbeddedResource Include="Vista\ControlDeInventarios.resx">
+      <DependentUpon>ControlDeInventarios.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vista\Equivalenciador.resx">
       <DependentUpon>Equivalenciador.vb</DependentUpon>
