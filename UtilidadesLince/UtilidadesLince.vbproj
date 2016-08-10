@@ -192,7 +192,6 @@
     </None>
     <None Include="App.config" />
     <None Include="Resources\VFPODBC.msi" />
-    <None Include="UtilidadesLince_ClaveTemporal.pfx" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\lincew-20120918_131046_15000.ico" />
