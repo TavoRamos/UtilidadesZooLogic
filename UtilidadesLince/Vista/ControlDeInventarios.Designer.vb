@@ -26,14 +26,16 @@ Partial Class ControlDeInventarios
         Me.Menu = New System.Windows.Forms.MenuStrip()
         Me.Contenedor = New System.Windows.Forms.SplitContainer()
         Me.Tab = New System.Windows.Forms.TabControl()
-        Me.TabPage1 = New System.Windows.Forms.TabPage()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
+        Me.Tab1 = New System.Windows.Forms.TabPage()
+        Me.Tab2 = New System.Windows.Forms.TabPage()
         Me.DGVCI = New System.Windows.Forms.DataGridView()
+        Me.TXTConsolaSQL = New System.Windows.Forms.RichTextBox()
         CType(Me.Contenedor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Contenedor.Panel1.SuspendLayout()
         Me.Contenedor.Panel2.SuspendLayout()
         Me.Contenedor.SuspendLayout()
         Me.Tab.SuspendLayout()
+        Me.Tab1.SuspendLayout()
         CType(Me.DGVCI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -73,8 +75,8 @@ Partial Class ControlDeInventarios
         '
         'Tab
         '
-        Me.Tab.Controls.Add(Me.TabPage1)
-        Me.Tab.Controls.Add(Me.TabPage2)
+        Me.Tab.Controls.Add(Me.Tab1)
+        Me.Tab.Controls.Add(Me.Tab2)
         Me.Tab.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Tab.Location = New System.Drawing.Point(0, 0)
         Me.Tab.Name = "Tab"
@@ -82,25 +84,26 @@ Partial Class ControlDeInventarios
         Me.Tab.Size = New System.Drawing.Size(980, 149)
         Me.Tab.TabIndex = 0
         '
-        'TabPage1
+        'Tab1
         '
-        Me.TabPage1.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage1.Name = "TabPage1"
-        Me.TabPage1.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage1.Size = New System.Drawing.Size(972, 123)
-        Me.TabPage1.TabIndex = 0
-        Me.TabPage1.Text = "TabPage1"
-        Me.TabPage1.UseVisualStyleBackColor = True
+        Me.Tab1.Controls.Add(Me.TXTConsolaSQL)
+        Me.Tab1.Location = New System.Drawing.Point(4, 22)
+        Me.Tab1.Name = "Tab1"
+        Me.Tab1.Padding = New System.Windows.Forms.Padding(3)
+        Me.Tab1.Size = New System.Drawing.Size(972, 123)
+        Me.Tab1.TabIndex = 0
+        Me.Tab1.Text = "Consola SQL"
+        Me.Tab1.UseVisualStyleBackColor = True
         '
-        'TabPage2
+        'Tab2
         '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(972, 123)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
+        Me.Tab2.Location = New System.Drawing.Point(4, 22)
+        Me.Tab2.Name = "Tab2"
+        Me.Tab2.Padding = New System.Windows.Forms.Padding(3)
+        Me.Tab2.Size = New System.Drawing.Size(972, 123)
+        Me.Tab2.TabIndex = 1
+        Me.Tab2.Text = "Tablas / Bases"
+        Me.Tab2.UseVisualStyleBackColor = True
         '
         'DGVCI
         '
@@ -111,6 +114,16 @@ Partial Class ControlDeInventarios
         Me.DGVCI.Name = "DGVCI"
         Me.DGVCI.Size = New System.Drawing.Size(980, 326)
         Me.DGVCI.TabIndex = 0
+        '
+        'TXTConsolaSQL
+        '
+        Me.TXTConsolaSQL.BorderStyle = System.Windows.Forms.BorderStyle.None
+        Me.TXTConsolaSQL.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.TXTConsolaSQL.Location = New System.Drawing.Point(3, 3)
+        Me.TXTConsolaSQL.Name = "TXTConsolaSQL"
+        Me.TXTConsolaSQL.Size = New System.Drawing.Size(966, 117)
+        Me.TXTConsolaSQL.TabIndex = 0
+        Me.TXTConsolaSQL.Text = ""
         '
         'ControlDeInventarios
         '
@@ -128,6 +141,7 @@ Partial Class ControlDeInventarios
         CType(Me.Contenedor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Contenedor.ResumeLayout(False)
         Me.Tab.ResumeLayout(False)
+        Me.Tab1.ResumeLayout(False)
         CType(Me.DGVCI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
@@ -138,7 +152,8 @@ Partial Class ControlDeInventarios
     Friend WithEvents Menu As MenuStrip
     Friend WithEvents Contenedor As SplitContainer
     Friend WithEvents Tab As TabControl
-    Friend WithEvents TabPage1 As TabPage
-    Friend WithEvents TabPage2 As TabPage
+    Friend WithEvents Tab1 As TabPage
+    Friend WithEvents Tab2 As TabPage
     Friend WithEvents DGVCI As DataGridView
+    Friend WithEvents TXTConsolaSQL As RichTextBox
 End Class

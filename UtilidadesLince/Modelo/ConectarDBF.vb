@@ -93,25 +93,22 @@ Public Class ConectarDBF
             Return Nothing
         End If
     End Function
-    Public Function LlenarDGV(ByRef BD As ConectarDBF) As DataTable
+    Public Shared Function LlenarDGVCI(ByRef BD As ConectarDBF) As DataTable
         Dim da
-        If Not String.IsNullOrWhiteSpace(nomBD) Then
-            da = New System.Data.Odbc.OdbcDataAdapter("Select * FROM  " & nomBD & " WHERE matcod = '" & cod_grupo & "'", CNS)
-
-            da = New System.Data.Odbc.OdbcDataAdapter("Select * FROM  " & NombreDB & " WHERE matcod = '" & cod_grupo & "'", CNS)
+        If Not String.IsNullOrWhiteSpace(BD.NombreDB) Then
+            da = New System.Data.Odbc.OdbcDataAdapter("Select * FROM  " & BD.NombreDB, BD.CNS)
         End If
         Dim dt As New DataTable
         Try
-            Using CNS
-                CNS.Open()
+            Using BD.CNS
+                BD.CNS.Open()
                 da.Fill(dt)
-                CNS.Close()
-
+                BD.CNS.Close()
             End Using
         Catch ex As Exception
             MessageBox.Show("Error al abrir la base de datos" & vbCrLf & ex.Message)
         End Try
-        If dt.Rows.Count = 1 Then
+        If dt.Rows.Count >= 0 Then
             Return dt
         Else
             Return Nothing
