@@ -25,18 +25,18 @@ Partial Class ControlDeInventarios
         Me.BarraStatus = New System.Windows.Forms.StatusStrip()
         Me.Menu = New System.Windows.Forms.MenuStrip()
         Me.Contenedor = New System.Windows.Forms.SplitContainer()
+        Me.DGVCI = New System.Windows.Forms.DataGridView()
         Me.Tab = New System.Windows.Forms.TabControl()
         Me.Tab1 = New System.Windows.Forms.TabPage()
-        Me.Tab2 = New System.Windows.Forms.TabPage()
-        Me.DGVCI = New System.Windows.Forms.DataGridView()
         Me.TXTConsolaSQL = New System.Windows.Forms.RichTextBox()
+        Me.Tab2 = New System.Windows.Forms.TabPage()
         CType(Me.Contenedor, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Contenedor.Panel1.SuspendLayout()
         Me.Contenedor.Panel2.SuspendLayout()
         Me.Contenedor.SuspendLayout()
+        CType(Me.DGVCI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.Tab.SuspendLayout()
         Me.Tab1.SuspendLayout()
-        CType(Me.DGVCI, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'BarraStatus
@@ -73,6 +73,17 @@ Partial Class ControlDeInventarios
         Me.Contenedor.SplitterDistance = 326
         Me.Contenedor.TabIndex = 2
         '
+        'DGVCI
+        '
+        Me.DGVCI.AllowDrop = True
+        Me.DGVCI.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
+        Me.DGVCI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGVCI.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.DGVCI.Location = New System.Drawing.Point(0, 0)
+        Me.DGVCI.Name = "DGVCI"
+        Me.DGVCI.Size = New System.Drawing.Size(980, 326)
+        Me.DGVCI.TabIndex = 0
+        '
         'Tab
         '
         Me.Tab.Controls.Add(Me.Tab1)
@@ -95,26 +106,6 @@ Partial Class ControlDeInventarios
         Me.Tab1.Text = "Consola SQL"
         Me.Tab1.UseVisualStyleBackColor = True
         '
-        'Tab2
-        '
-        Me.Tab2.Location = New System.Drawing.Point(4, 22)
-        Me.Tab2.Name = "Tab2"
-        Me.Tab2.Padding = New System.Windows.Forms.Padding(3)
-        Me.Tab2.Size = New System.Drawing.Size(972, 123)
-        Me.Tab2.TabIndex = 1
-        Me.Tab2.Text = "Tablas / Bases"
-        Me.Tab2.UseVisualStyleBackColor = True
-        '
-        'DGVCI
-        '
-        Me.DGVCI.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllHeaders
-        Me.DGVCI.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGVCI.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.DGVCI.Location = New System.Drawing.Point(0, 0)
-        Me.DGVCI.Name = "DGVCI"
-        Me.DGVCI.Size = New System.Drawing.Size(980, 326)
-        Me.DGVCI.TabIndex = 0
-        '
         'TXTConsolaSQL
         '
         Me.TXTConsolaSQL.BorderStyle = System.Windows.Forms.BorderStyle.None
@@ -124,6 +115,16 @@ Partial Class ControlDeInventarios
         Me.TXTConsolaSQL.Size = New System.Drawing.Size(966, 117)
         Me.TXTConsolaSQL.TabIndex = 0
         Me.TXTConsolaSQL.Text = ""
+        '
+        'Tab2
+        '
+        Me.Tab2.Location = New System.Drawing.Point(4, 22)
+        Me.Tab2.Name = "Tab2"
+        Me.Tab2.Padding = New System.Windows.Forms.Padding(3)
+        Me.Tab2.Size = New System.Drawing.Size(972, 123)
+        Me.Tab2.TabIndex = 1
+        Me.Tab2.Text = "Tablas / Bases"
+        Me.Tab2.UseVisualStyleBackColor = True
         '
         'ControlDeInventarios
         '
@@ -140,9 +141,9 @@ Partial Class ControlDeInventarios
         Me.Contenedor.Panel2.ResumeLayout(False)
         CType(Me.Contenedor, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Contenedor.ResumeLayout(False)
+        CType(Me.DGVCI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Tab.ResumeLayout(False)
         Me.Tab1.ResumeLayout(False)
-        CType(Me.DGVCI, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
