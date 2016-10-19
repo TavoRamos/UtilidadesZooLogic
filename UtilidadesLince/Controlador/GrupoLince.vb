@@ -33,7 +33,7 @@
     Public Overloads Function toString() As String
         Dim tallesStr As String = ""
         For Each str As String In Me.Talles
-            tallesStr += str + "-"
+            tallesStr += str + " - "
         Next
         tallesStr = tallesStr.Substring(0, tallesStr.Length - 1)
         Return "ID: " + Me.ID + vbCrLf + "NOMBRE: " + Me.Descripcion + vbCrLf + "TALLES " + tallesStr.Replace(" ", Nothing)

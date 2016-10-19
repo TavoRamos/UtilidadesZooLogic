@@ -42,6 +42,10 @@ Partial Class Equivalenciador
         Me.LBLEtiqueta = New System.Windows.Forms.Label()
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.ConfiguraciónToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.HerramientasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PruebaDeStressToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.GenerarEquivalenciasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ControlDeInventariosToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SaveFileDialog1 = New System.Windows.Forms.SaveFileDialog()
         Me.TXTCAI = New System.Windows.Forms.TextBox()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -58,6 +62,11 @@ Partial Class Equivalenciador
         Me.Label5 = New System.Windows.Forms.Label()
         Me.NMRAumento1 = New System.Windows.Forms.NumericUpDown()
         Me.Label6 = New System.Windows.Forms.Label()
+        Me.TXTDelimitadorTalleI = New System.Windows.Forms.TextBox()
+        Me.TXTDelimitadorTalleE = New System.Windows.Forms.TextBox()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.BW1 = New System.ComponentModel.BackgroundWorker()
         Me.SB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.NMRInicioCAI, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -72,7 +81,7 @@ Partial Class Equivalenciador
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BTNExportar.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
         Me.BTNExportar.Enabled = False
-        Me.BTNExportar.Location = New System.Drawing.Point(385, 314)
+        Me.BTNExportar.Location = New System.Drawing.Point(385, 360)
         Me.BTNExportar.Name = "BTNExportar"
         Me.BTNExportar.Size = New System.Drawing.Size(492, 21)
         Me.BTNExportar.TabIndex = 51
@@ -82,7 +91,7 @@ Partial Class Equivalenciador
         'SB
         '
         Me.SB.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.STProgreso, Me.SBLBL})
-        Me.SB.Location = New System.Drawing.Point(0, 352)
+        Me.SB.Location = New System.Drawing.Point(0, 398)
         Me.SB.Name = "SB"
         Me.SB.RightToLeft = System.Windows.Forms.RightToLeft.No
         Me.SB.Size = New System.Drawing.Size(893, 22)
@@ -103,7 +112,7 @@ Partial Class Equivalenciador
         'TXTCODGrupo
         '
         Me.TXTCODGrupo.Enabled = False
-        Me.TXTCODGrupo.Location = New System.Drawing.Point(79, 255)
+        Me.TXTCODGrupo.Location = New System.Drawing.Point(79, 307)
         Me.TXTCODGrupo.Name = "TXTCODGrupo"
         Me.TXTCODGrupo.Size = New System.Drawing.Size(75, 20)
         Me.TXTCODGrupo.TabIndex = 48
@@ -112,7 +121,7 @@ Partial Class Equivalenciador
         'TXTNombreGrupo
         '
         Me.TXTNombreGrupo.Enabled = False
-        Me.TXTNombreGrupo.Location = New System.Drawing.Point(160, 255)
+        Me.TXTNombreGrupo.Location = New System.Drawing.Point(160, 307)
         Me.TXTNombreGrupo.Name = "TXTNombreGrupo"
         Me.TXTNombreGrupo.Size = New System.Drawing.Size(199, 20)
         Me.TXTNombreGrupo.TabIndex = 47
@@ -121,7 +130,7 @@ Partial Class Equivalenciador
         'LBLGrupo
         '
         Me.LBLGrupo.AutoSize = True
-        Me.LBLGrupo.Location = New System.Drawing.Point(27, 258)
+        Me.LBLGrupo.Location = New System.Drawing.Point(27, 310)
         Me.LBLGrupo.Name = "LBLGrupo"
         Me.LBLGrupo.Size = New System.Drawing.Size(46, 13)
         Me.LBLGrupo.TabIndex = 46
@@ -129,7 +138,7 @@ Partial Class Equivalenciador
         '
         'BTNGenerar
         '
-        Me.BTNGenerar.Location = New System.Drawing.Point(79, 308)
+        Me.BTNGenerar.Location = New System.Drawing.Point(79, 357)
         Me.BTNGenerar.Name = "BTNGenerar"
         Me.BTNGenerar.Size = New System.Drawing.Size(280, 27)
         Me.BTNGenerar.TabIndex = 45
@@ -142,15 +151,16 @@ Partial Class Equivalenciador
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TXTSalida.Location = New System.Drawing.Point(385, 34)
+        Me.TXTSalida.MaxLength = 999999999
         Me.TXTSalida.Multiline = True
         Me.TXTSalida.Name = "TXTSalida"
         Me.TXTSalida.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
-        Me.TXTSalida.Size = New System.Drawing.Size(492, 274)
+        Me.TXTSalida.Size = New System.Drawing.Size(492, 320)
         Me.TXTSalida.TabIndex = 44
         '
         'TXTColor
         '
-        Me.TXTColor.Location = New System.Drawing.Point(79, 229)
+        Me.TXTColor.Location = New System.Drawing.Point(79, 281)
         Me.TXTColor.Name = "TXTColor"
         Me.TXTColor.Size = New System.Drawing.Size(280, 20)
         Me.TXTColor.TabIndex = 43
@@ -158,7 +168,7 @@ Partial Class Equivalenciador
         'LBLColor
         '
         Me.LBLColor.AutoSize = True
-        Me.LBLColor.Location = New System.Drawing.Point(29, 232)
+        Me.LBLColor.Location = New System.Drawing.Point(29, 284)
         Me.LBLColor.Name = "LBLColor"
         Me.LBLColor.Size = New System.Drawing.Size(44, 13)
         Me.LBLColor.TabIndex = 42
@@ -166,7 +176,7 @@ Partial Class Equivalenciador
         '
         'TXTTalle
         '
-        Me.TXTTalle.Location = New System.Drawing.Point(79, 203)
+        Me.TXTTalle.Location = New System.Drawing.Point(79, 255)
         Me.TXTTalle.Name = "TXTTalle"
         Me.TXTTalle.Size = New System.Drawing.Size(280, 20)
         Me.TXTTalle.TabIndex = 41
@@ -174,7 +184,7 @@ Partial Class Equivalenciador
         'LBLTalle
         '
         Me.LBLTalle.AutoSize = True
-        Me.LBLTalle.Location = New System.Drawing.Point(33, 206)
+        Me.LBLTalle.Location = New System.Drawing.Point(33, 258)
         Me.LBLTalle.Name = "LBLTalle"
         Me.LBLTalle.Size = New System.Drawing.Size(40, 13)
         Me.LBLTalle.TabIndex = 40
@@ -182,7 +192,7 @@ Partial Class Equivalenciador
         '
         'TXTArticulo
         '
-        Me.TXTArticulo.Location = New System.Drawing.Point(79, 177)
+        Me.TXTArticulo.Location = New System.Drawing.Point(79, 229)
         Me.TXTArticulo.Name = "TXTArticulo"
         Me.TXTArticulo.Size = New System.Drawing.Size(280, 20)
         Me.TXTArticulo.TabIndex = 39
@@ -190,7 +200,7 @@ Partial Class Equivalenciador
         'LBLArticulo
         '
         Me.LBLArticulo.AutoSize = True
-        Me.LBLArticulo.Location = New System.Drawing.Point(12, 180)
+        Me.LBLArticulo.Location = New System.Drawing.Point(12, 232)
         Me.LBLArticulo.Name = "LBLArticulo"
         Me.LBLArticulo.Size = New System.Drawing.Size(61, 13)
         Me.LBLArticulo.TabIndex = 38
@@ -201,7 +211,7 @@ Partial Class Equivalenciador
         Me.CHKValidarArticulo.AutoSize = True
         Me.CHKValidarArticulo.Checked = True
         Me.CHKValidarArticulo.CheckState = System.Windows.Forms.CheckState.Checked
-        Me.CHKValidarArticulo.Location = New System.Drawing.Point(79, 285)
+        Me.CHKValidarArticulo.Location = New System.Drawing.Point(79, 332)
         Me.CHKValidarArticulo.Name = "CHKValidarArticulo"
         Me.CHKValidarArticulo.Size = New System.Drawing.Size(95, 17)
         Me.CHKValidarArticulo.TabIndex = 37
@@ -219,7 +229,7 @@ Partial Class Equivalenciador
         '
         'MenuStrip1
         '
-        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConfiguraciónToolStripMenuItem})
+        Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ConfiguraciónToolStripMenuItem, Me.HerramientasToolStripMenuItem, Me.ControlDeInventariosToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
         Me.MenuStrip1.Size = New System.Drawing.Size(893, 24)
@@ -231,6 +241,32 @@ Partial Class Equivalenciador
         Me.ConfiguraciónToolStripMenuItem.Name = "ConfiguraciónToolStripMenuItem"
         Me.ConfiguraciónToolStripMenuItem.Size = New System.Drawing.Size(95, 20)
         Me.ConfiguraciónToolStripMenuItem.Text = "&Configuración"
+        '
+        'HerramientasToolStripMenuItem
+        '
+        Me.HerramientasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PruebaDeStressToolStripMenuItem})
+        Me.HerramientasToolStripMenuItem.Name = "HerramientasToolStripMenuItem"
+        Me.HerramientasToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
+        Me.HerramientasToolStripMenuItem.Text = "Herramientas"
+        '
+        'PruebaDeStressToolStripMenuItem
+        '
+        Me.PruebaDeStressToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GenerarEquivalenciasToolStripMenuItem})
+        Me.PruebaDeStressToolStripMenuItem.Name = "PruebaDeStressToolStripMenuItem"
+        Me.PruebaDeStressToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.PruebaDeStressToolStripMenuItem.Text = "Prueba de Stress"
+        '
+        'GenerarEquivalenciasToolStripMenuItem
+        '
+        Me.GenerarEquivalenciasToolStripMenuItem.Name = "GenerarEquivalenciasToolStripMenuItem"
+        Me.GenerarEquivalenciasToolStripMenuItem.Size = New System.Drawing.Size(189, 22)
+        Me.GenerarEquivalenciasToolStripMenuItem.Text = "Generar equivalencias"
+        '
+        'ControlDeInventariosToolStripMenuItem
+        '
+        Me.ControlDeInventariosToolStripMenuItem.Name = "ControlDeInventariosToolStripMenuItem"
+        Me.ControlDeInventariosToolStripMenuItem.Size = New System.Drawing.Size(136, 20)
+        Me.ControlDeInventariosToolStripMenuItem.Text = "Control de Inventarios"
         '
         'TXTCAI
         '
@@ -358,11 +394,53 @@ Partial Class Equivalenciador
         Me.Label6.TabIndex = 62
         Me.Label6.Text = "AUMENTO"
         '
+        'TXTDelimitadorTalleI
+        '
+        Me.TXTDelimitadorTalleI.Location = New System.Drawing.Point(255, 174)
+        Me.TXTDelimitadorTalleI.Name = "TXTDelimitadorTalleI"
+        Me.TXTDelimitadorTalleI.Size = New System.Drawing.Size(104, 20)
+        Me.TXTDelimitadorTalleI.TabIndex = 69
+        Me.TXTDelimitadorTalleI.Visible = False
+        '
+        'TXTDelimitadorTalleE
+        '
+        Me.TXTDelimitadorTalleE.Location = New System.Drawing.Point(79, 174)
+        Me.TXTDelimitadorTalleE.Name = "TXTDelimitadorTalleE"
+        Me.TXTDelimitadorTalleE.Size = New System.Drawing.Size(104, 20)
+        Me.TXTDelimitadorTalleE.TabIndex = 67
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(46, 159)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(137, 13)
+        Me.Label8.TabIndex = 66
+        Me.Label8.Text = "Delimitador talle en etiqueta"
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(214, 159)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(145, 13)
+        Me.Label9.TabIndex = 70
+        Me.Label9.Text = "Delimitador talle para importar"
+        Me.Label9.Visible = False
+        '
+        'BW1
+        '
+        Me.BW1.WorkerReportsProgress = True
+        '
         'Equivalenciador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(893, 374)
+        Me.ClientSize = New System.Drawing.Size(893, 420)
+        Me.Controls.Add(Me.Label9)
+        Me.Controls.Add(Me.TXTDelimitadorTalleI)
+        Me.Controls.Add(Me.TXTDelimitadorTalleE)
+        Me.Controls.Add(Me.Label8)
         Me.Controls.Add(Me.NMRAumento2)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.NMRAumento1)
@@ -393,6 +471,7 @@ Partial Class Equivalenciador
         Me.Controls.Add(Me.CHKValidarArticulo)
         Me.Controls.Add(Me.LBLEtiqueta)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.DoubleBuffered = True
         Me.Name = "Equivalenciador"
         Me.Text = "Equivalenciador"
         Me.SB.ResumeLayout(False)
@@ -443,4 +522,13 @@ Partial Class Equivalenciador
     Friend WithEvents Label5 As Label
     Friend WithEvents NMRAumento1 As NumericUpDown
     Friend WithEvents Label6 As Label
+    Friend WithEvents HerramientasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PruebaDeStressToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents GenerarEquivalenciasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents TXTDelimitadorTalleI As TextBox
+    Friend WithEvents TXTDelimitadorTalleE As TextBox
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Label9 As Label
+    Friend WithEvents ControlDeInventariosToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents BW1 As System.ComponentModel.BackgroundWorker
 End Class

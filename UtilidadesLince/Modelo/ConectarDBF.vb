@@ -21,6 +21,22 @@ Public Class ConectarDBF
         CNS = a
         NombreDB = nombre_db
     End Sub
+    Public Sub New(ByRef ubicacion As String)
+        Dim a As New OdbcConnection("Driver={Microsoft Visual FoxPro Driver};SourceType=DBF;SourceDB=" &
+                ubicacion & ";")
+        Try
+            a.Open()
+            a.Close()
+        Catch ex As Exception
+            MsgBox("ERROR AL CONECTAR DB" + vbCrLf + ex.Message)
+            CNS = Nothing
+            NombreDB = Nothing
+            a.Close()
+            Return
+        End Try
+        CNS = a
+        NombreDB = Nothing
+    End Sub
     Public Function buscarArticulo(ByRef cod_art As String, ByRef Optional nomBD As String = Nothing) As Boolean
         Dim da
         If Not String.IsNullOrWhiteSpace(nomBD) Then
@@ -69,7 +85,7 @@ Public Class ConectarDBF
             Return Nothing
         End If
     End Function
-    Public Function obtenerGrupo(ByRef cod_grupo As String, ByRef Optional nomBD As String = Nothing) As DataTable
+    Public Function ObtenerGrupo(ByRef cod_grupo As String, ByRef Optional nomBD As String = Nothing) As DataTable
         Dim da
         If Not String.IsNullOrWhiteSpace(nomBD) Then
             da = New System.Data.Odbc.OdbcDataAdapter("Select * FROM  " & nomBD & " WHERE matcod = '" & cod_grupo & "'", CNS)
@@ -87,18 +103,37 @@ Public Class ConectarDBF
         Catch ex As Exception
             MessageBox.Show("Error al abrir la base de datos" & vbCrLf & ex.Message)
         End Try
-        If dt.Rows.Count = 1 Then
+        If dt.Rows.Count > 0 Then
             Return dt
         Else
             Return Nothing
         End If
     End Function
-    Public Shared Function LlenarDGVCI(ByRef BD As ConectarDBF) As DataTable
+    Public Shared Function LlenarDGV(ByRef BD As ConectarDBF) As DataTable
         Dim da
         If Not String.IsNullOrWhiteSpace(BD.NombreDB) Then
             da = New System.Data.Odbc.OdbcDataAdapter("Select * FROM  " & BD.NombreDB, BD.CNS)
         End If
         Dim dt As New DataTable
+        Try
+            Using BD.CNS
+                BD.CNS.Open()
+                da.Fill(dt)
+                BD.CNS.Close()
+            End Using
+        Catch ex As Exception
+            MessageBox.Show("Error al abrir la base de datos" & vbCrLf & ex.Message)
+        End Try
+        If dt.Rows.Count >= 0 Then
+            Return dt
+        Else
+            Return Nothing
+        End If
+    End Function
+    Public Shared Function LlenarDGV(ByRef BD As ConectarDBF, ByRef Consulta As String) As DataTable
+        Dim da
+        da = New System.Data.Odbc.OdbcDataAdapter(Consulta, BD.CNS)
+            Dim dt As New DataTable
         Try
             Using BD.CNS
                 BD.CNS.Open()

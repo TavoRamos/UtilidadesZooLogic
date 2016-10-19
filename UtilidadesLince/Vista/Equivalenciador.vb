@@ -1,4 +1,5 @@
-﻿Imports System.IO
+﻿Imports System.ComponentModel
+Imports System.IO
 
 Public Class Equivalenciador
     Private Sub BTNGenerar_Click(sender As Object, e As EventArgs) Handles BTNGenerar.Click
@@ -22,14 +23,18 @@ Public Class Equivalenciador
                     SBLBL.Text = "Generando equivalencias..."
                     STProgreso.ProgressBar.Value = 100
                     For i As Integer = 0 To grupo.Talles.Count - 1
+                        Dim Talle As String = grupo.Talles(i)
+                        Dim StrEtiqueta As String = TXTEtiqueta.Text.Trim
                         If Not String.IsNullOrWhiteSpace(TXTSalida.Text) Then
-                            TXTSalida.Text += "*AE " + TXTEtiqueta.Text.Trim + "," + TXTArticulo.Text + "," + TXTColor.Text.Trim + "," + grupo.Talles(i) + vbCrLf
+                            StrEtiqueta = "*AE " + StrEtiqueta.Substring(1, StrEtiqueta.LastIndexOf(TXTDelimitadorTalleE.Text) - 1) + TXTDelimitadorTalleE.Text + Talle.Trim
+                            TXTSalida.Text += StrEtiqueta + "," + TXTArticulo.Text + "," + TXTColor.Text.Trim + "," + Talle.Trim + vbCrLf
                         Else
                             TXTSalida.Text = "/+" + vbCrLf
-                            TXTSalida.Text += "*AE " + TXTEtiqueta.Text.Trim + "," + TXTArticulo.Text + "," + TXTColor.Text.Trim + "," + grupo.Talles(i) + vbCrLf
+                            StrEtiqueta = "*AE " + StrEtiqueta.Substring(1, StrEtiqueta.LastIndexOf(TXTDelimitadorTalleE.Text) - 1) + TXTDelimitadorTalleE.Text + Talle.Trim
+                            TXTSalida.Text += StrEtiqueta + "," + TXTArticulo.Text + "," + TXTColor.Text.Trim + "," + Talle.Trim + vbCrLf
                         End If
                     Next
-                    TXTSalida.Text += vbCrLf + grupo.toString
+                    'TXTSalida.Text += vbCrLf + grupo.toString
                 End If
             Else
                 MsgBox("Articulo no encontrado")
@@ -63,10 +68,10 @@ Public Class Equivalenciador
                     If My.Computer.FileSystem.FileExists(.FileName) Then
                         My.Computer.FileSystem.DeleteFile(.FileName)
                         My.Computer.FileSystem.WriteAllText(.FileName, TXTSalida.Text & vbCrLf, True)
-                        My.Computer.FileSystem.WriteAllText(.FileName + "- Copia -", TXTSalida.Text & vbCrLf, True)
+                        My.Computer.FileSystem.WriteAllText(.FileName + "- Copia -", TXTSalida.Text & vbCrLf, True, System.Text.Encoding.ASCII)
                     Else
                         My.Computer.FileSystem.WriteAllText(.FileName, TXTSalida.Text & vbCrLf, True)
-                        My.Computer.FileSystem.WriteAllText(.FileName + "- Copia -", TXTSalida.Text & vbCrLf, True)
+                        My.Computer.FileSystem.WriteAllText(.FileName + "- Copia -", TXTSalida.Text & vbCrLf, True, System.Text.Encoding.ASCII)
                     End If
                 End If
             End With
@@ -128,5 +133,51 @@ Public Class Equivalenciador
             TXTTalle.Enabled = True
             TXTColor.Enabled = True
         End If
+    End Sub
+
+    Private Sub GenerarEquivalenciasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GenerarEquivalenciasToolStripMenuItem.Click
+        BW1.RunWorkerAsync()
+    End Sub
+
+    Private Sub ControlDeInventariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeInventariosToolStripMenuItem.Click
+        ControlDeInventarios.Show()
+    End Sub
+    Public Sub Prueba1Lecoq()
+        Try
+            Dim DB As New ConectarDBF(My.Settings.BDLince)
+            Dim Consulta As String = "SELECT * FROM art WHERE artfab='01'"
+            Dim ListaArts As DataTable = ConectarDBF.LlenarDGV(DB, Consulta)
+            Dim Articulo As String 'ArticuloLince
+            Dim Grupo As GrupoLince
+            Dim Texto As String
+            Dim Progreso As Integer = 0
+            Dim Contador As Integer = 0
+            For Each Fila As DataRow In ListaArts.Rows
+                Contador += 1
+                Articulo = Fila.Item(0).ToString.Trim 'ArticuloLince.NuevoArticuloDesdeBD(Fila.Item(0).ToString.Trim)
+                Grupo = GrupoLince.NuevoDesdeDB(Fila.Item(16).ToString)
+                For i = 0 To Grupo.Talles.Count - 1
+                    Texto = Fila.Item(0).ToString.Trim + "$" + Grupo.Talles(i).Trim + "," + Fila.Item(0).ToString.Trim + ",," + Grupo.Talles(i).Trim + vbCrLf
+                    Progreso = (Contador * 100) / ListaArts.Rows.Count
+                    BW1.ReportProgress(Progreso, Texto)
+                Next
+            Next
+        Catch ex As Exception
+            MsgBox("Prueba Lecoq" + vbCrLf + ex.Message)
+        End Try
+    End Sub
+
+    Private Sub BW1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BW1.DoWork
+        Prueba1Lecoq()
+    End Sub
+
+    Private Sub BW1_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles BW1.ProgressChanged
+        Try
+            TXTSalida.Text += e.UserState
+        STProgreso.Value = e.ProgressPercentage
+            SBLBL.Text = e.ProgressPercentage.ToString + " % Completado"
+        Catch ex As Exception
+            MsgBox("BW1_ProgressCahnged" + vbCrLf + ex.Message)
+        End Try
     End Sub
 End Class
