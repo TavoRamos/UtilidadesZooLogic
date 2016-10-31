@@ -1,12 +1,12 @@
 ﻿Public Class ArticuloLince
-    Protected Friend Property Codigo As String
-    'Protected Friend Property Proveedor As Porveedor
-    Protected Friend Property Descripcion As String
-    Protected Friend Property Color As String
-    Protected Friend Property Grupo As GrupoLince
-    'Protected Friend Property Grupo As String
-    Protected Friend Property Precio()
-    Protected Friend Property Marca As String()
+    Public Property Codigo As String
+    'Public Property Proveedor As Porveedor
+    Public Property Descripcion As String
+    Public Property Color As String
+    Public Property Grupo As GrupoLince
+    'Public Property Grupo As String
+    Public Property Precio()
+    Public Property Marca As String()
 
     Public Sub New(ByRef cod As String, ByRef desart As String, ByRef col As String, ByRef grupart As String, ByRef precio As Object)
         Codigo = cod

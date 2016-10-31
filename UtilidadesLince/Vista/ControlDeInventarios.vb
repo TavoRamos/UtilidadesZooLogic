@@ -37,6 +37,7 @@ Public Class ControlDeInventarios
             Dim ListaSinJus = ListaArticulos
             DGVCIJustificados.DataSource = ListaArticulos
             DGVCISinJustificar.DataSource = ListaSinJus
+            DGVCIJustificados.Columns("Grupo").DataPropertyName = "ID"
             DGVCISinJustificar.Refresh()
             DGVCIJustificados.Refresh()
         Catch ex As Exception
