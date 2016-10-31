@@ -125,6 +125,8 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controlador\AreaCI.vb" />
+    <Compile Include="Controlador\ArticuloCI.vb" />
     <Compile Include="Controlador\ArticuloLince.vb" />
     <Compile Include="Controlador\GrupoLince.vb" />
     <Compile Include="Modelo\ConectarDBF.vb" />

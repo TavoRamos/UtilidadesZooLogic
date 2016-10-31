@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class Equivalenciador
     Inherits System.Windows.Forms.Form
 
     'Form reemplaza a Dispose para limpiar la lista de componentes.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,7 +20,7 @@ Partial Class Equivalenciador
     'NOTA: el Diseñador de Windows Forms necesita el siguiente procedimiento
     'Se puede modificar usando el Diseñador de Windows Forms.  
     'No lo modifique con el editor de código.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Me.BTNExportar = New System.Windows.Forms.Button()
@@ -67,6 +67,7 @@ Partial Class Equivalenciador
         Me.Label8 = New System.Windows.Forms.Label()
         Me.Label9 = New System.Windows.Forms.Label()
         Me.BW1 = New System.ComponentModel.BackgroundWorker()
+        Me.ImportarDesdeArchivoDeTextoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.NMRInicioCAI, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -244,7 +245,7 @@ Partial Class Equivalenciador
         '
         'HerramientasToolStripMenuItem
         '
-        Me.HerramientasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PruebaDeStressToolStripMenuItem})
+        Me.HerramientasToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PruebaDeStressToolStripMenuItem, Me.ImportarDesdeArchivoDeTextoToolStripMenuItem})
         Me.HerramientasToolStripMenuItem.Name = "HerramientasToolStripMenuItem"
         Me.HerramientasToolStripMenuItem.Size = New System.Drawing.Size(90, 20)
         Me.HerramientasToolStripMenuItem.Text = "Herramientas"
@@ -253,7 +254,7 @@ Partial Class Equivalenciador
         '
         Me.PruebaDeStressToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.GenerarEquivalenciasToolStripMenuItem})
         Me.PruebaDeStressToolStripMenuItem.Name = "PruebaDeStressToolStripMenuItem"
-        Me.PruebaDeStressToolStripMenuItem.Size = New System.Drawing.Size(160, 22)
+        Me.PruebaDeStressToolStripMenuItem.Size = New System.Drawing.Size(241, 22)
         Me.PruebaDeStressToolStripMenuItem.Text = "Prueba de Stress"
         '
         'GenerarEquivalenciasToolStripMenuItem
@@ -432,6 +433,12 @@ Partial Class Equivalenciador
         '
         Me.BW1.WorkerReportsProgress = True
         '
+        'ImportarDesdeArchivoDeTextoToolStripMenuItem
+        '
+        Me.ImportarDesdeArchivoDeTextoToolStripMenuItem.Name = "ImportarDesdeArchivoDeTextoToolStripMenuItem"
+        Me.ImportarDesdeArchivoDeTextoToolStripMenuItem.Size = New System.Drawing.Size(241, 22)
+        Me.ImportarDesdeArchivoDeTextoToolStripMenuItem.Text = "Importar desde archivo de texto"
+        '
         'Equivalenciador
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -531,4 +538,5 @@ Partial Class Equivalenciador
     Friend WithEvents Label9 As Label
     Friend WithEvents ControlDeInventariosToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents BW1 As System.ComponentModel.BackgroundWorker
+    Friend WithEvents ImportarDesdeArchivoDeTextoToolStripMenuItem As ToolStripMenuItem
 End Class

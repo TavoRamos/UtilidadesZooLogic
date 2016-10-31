@@ -2,6 +2,8 @@
 Imports System.IO
 
 Public Class Equivalenciador
+    Dim inicio As DateTime
+    Dim fin As DateTime
     Private Sub BTNGenerar_Click(sender As Object, e As EventArgs) Handles BTNGenerar.Click
         Dim inicio As DateTime = DateTime.Now
         If CHKValidarArticulo.Checked = True Then
@@ -14,11 +16,11 @@ Public Class Equivalenciador
                     SBLBL.Text = "Cargando Articulo..."
                     STProgreso.ProgressBar.Value = 50
                     TXTArticulo.Text = Articulo.Codigo
-                    TXTCODGrupo.Text = Articulo.Grupo
+                    TXTCODGrupo.Text = Articulo.Grupo.Descripcion
                     TXTColor.Text = Articulo.Color
                     SBLBL.Text = "Cargando curva de talles..."
                     STProgreso.ProgressBar.Value = 75
-                    Dim grupo = GrupoLince.NuevoDesdeDB(Articulo.Grupo)
+                    Dim grupo = GrupoLince.NuevoDesdeDB(Articulo.Grupo.ID)
                     TXTNombreGrupo.Text = grupo.Descripcion
                     SBLBL.Text = "Generando equivalencias..."
                     STProgreso.ProgressBar.Value = 100
@@ -134,11 +136,9 @@ Public Class Equivalenciador
             TXTColor.Enabled = True
         End If
     End Sub
-
     Private Sub GenerarEquivalenciasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GenerarEquivalenciasToolStripMenuItem.Click
         BW1.RunWorkerAsync()
     End Sub
-
     Private Sub ControlDeInventariosToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ControlDeInventariosToolStripMenuItem.Click
         ControlDeInventarios.Show()
     End Sub
@@ -160,24 +160,45 @@ Public Class Equivalenciador
                     Texto = Fila.Item(0).ToString.Trim + "$" + Grupo.Talles(i).Trim + "," + Fila.Item(0).ToString.Trim + ",," + Grupo.Talles(i).Trim + vbCrLf
                     Progreso = (Contador * 100) / ListaArts.Rows.Count
                     BW1.ReportProgress(Progreso, Texto)
+
                 Next
             Next
         Catch ex As Exception
             MsgBox("Prueba Lecoq" + vbCrLf + ex.Message)
         End Try
     End Sub
-
     Private Sub BW1_DoWork(sender As Object, e As System.ComponentModel.DoWorkEventArgs) Handles BW1.DoWork
+        inicio = DateTime.Now
         Prueba1Lecoq()
     End Sub
-
     Private Sub BW1_ProgressChanged(sender As Object, e As ProgressChangedEventArgs) Handles BW1.ProgressChanged
         Try
             TXTSalida.Text += e.UserState
-        STProgreso.Value = e.ProgressPercentage
+            STProgreso.Value = e.ProgressPercentage
             SBLBL.Text = e.ProgressPercentage.ToString + " % Completado"
         Catch ex As Exception
             MsgBox("BW1_ProgressCahnged" + vbCrLf + ex.Message)
         End Try
+    End Sub
+    Private Sub BW1_RunWorkerCompleted(sender As Object, e As RunWorkerCompletedEventArgs) Handles BW1.RunWorkerCompleted
+        fin = DateTime.Now
+        Dim totalMin As String
+        Dim total As TimeSpan = New TimeSpan(fin.Ticks - inicio.Ticks)
+        totalMin = total.Hours.ToString("00") & ":" & total.Minutes.ToString("00") & ":" & total.Seconds.ToString("00")
+        SBLBL.Text += " / Tiempo de proceso " + totalMin
+        STProgreso.ProgressBar.Value = 100
+    End Sub
+
+    Private Sub ImportarDesdeArchivoDeTextoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ImportarDesdeArchivoDeTextoToolStripMenuItem.Click
+        Dim fic As Stream
+        Dim OPF As New OpenFileDialog()
+        OPF.Filter = "Texto plano|*.txt"
+        OPF.ShowDialog()
+        fic = OPF.OpenFile
+        Dim texto As String
+        Dim sr As New System.IO.StreamReader(fic)
+        texto = sr.ReadToEnd()
+        sr.Close()
+        Debug.Print(texto)
     End Sub
 End Class

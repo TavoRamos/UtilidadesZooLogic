@@ -41,7 +41,7 @@
     'SIN USO
     Public Shared Function listarCurvaArticulo(ByRef articulo As ArticuloLince) As List(Of String)
         Dim BD As New ConectarDBF(My.Settings.BDLince, My.Settings.NombreBDGru)
-        Dim dt = BD.obtenerGrupo(articulo.Grupo)
+        Dim dt = BD.ObtenerGrupo(articulo.Grupo.ID)
         Dim Talles = New List(Of String)
         For i As Integer = 1 To 25
             If Not String.IsNullOrWhiteSpace(dt.Rows(0).Item("mc" + i.ToString).ToString) Then

@@ -3,14 +3,16 @@
     'Protected Friend Property Proveedor As Porveedor
     Protected Friend Property Descripcion As String
     Protected Friend Property Color As String
-    Protected Friend Property Grupo As String
+    Protected Friend Property Grupo As GrupoLince
+    'Protected Friend Property Grupo As String
     Protected Friend Property Precio()
+    Protected Friend Property Marca As String()
 
-    Public Sub New(ByRef cod As String, ByRef desart As String, ByRef col As String, ByRef grupart As String, ByRef precio As Array)
+    Public Sub New(ByRef cod As String, ByRef desart As String, ByRef col As String, ByRef grupart As String, ByRef precio As Object)
         Codigo = cod
         Descripcion = desart
         Color = col
-        Grupo = grupart
+        Grupo = New GrupoLince(grupart, Nothing, Nothing)
         precio = precio
     End Sub
     Public Shared Function NuevoArticuloDesdeBD(ByRef codart) As ArticuloLince
