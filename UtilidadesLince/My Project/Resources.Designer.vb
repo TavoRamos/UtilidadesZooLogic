@@ -69,5 +69,26 @@ Namespace My.Resources
                 Return CType(obj,System.Drawing.Icon)
             End Get
         End Property
+        
+        '''<summary>
+        '''  Busca una cadena traducida similar a 1-0070	PLAYGROUND TF		02	850	0	0
+        '''1-0070	PLAYGROUND TF	42	02	850	1	2
+        '''1-0070	PLAYGROUND TF	43	02	850	2	2
+        '''1-0070	PLAYGROUND TF	44	02	850	2	2
+        '''1-0070	PLAYGROUND TF	45	02	850	1	1
+        '''1-0072	PLAYGRAUND TF BLACK-WHITE		02	850	0	0
+        '''1-0072	PLAYGRAUND TF BLACK-WHITE	41	02	850	1	1
+        '''1-0072	PLAYGRAUND TF BLACK-WHITE	42	02	850	4	3
+        '''1-0072	PLAYGRAUND TF BLACK-WHITE	43	02	850	1	1
+        '''1-0072	PLAYGRAUND TF BLACK-WHITE	44	02	850	2	2
+        '''1-0074	PLAYGROUND TF		02	850	0	0
+        '''1-0074	PLAYGROUND TF	42	02	850	2	2
+        '''1-0074	PLAYGROUND TF	43	02 [resto de la cadena truncado]&quot;;.
+        '''</summary>
+        Friend ReadOnly Property Prueba_inventario() As String
+            Get
+                Return ResourceManager.GetString("Prueba_inventario", resourceCulture)
+            End Get
+        End Property
     End Module
 End Namespace
