@@ -89,6 +89,126 @@ Namespace My
                 Me("NombreBDGru") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ColJust1() As String
+            Get
+                Return CType(Me("ColJust1"),String)
+            End Get
+            Set
+                Me("ColJust1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ColJust2() As String
+            Get
+                Return CType(Me("ColJust2"),String)
+            End Get
+            Set
+                Me("ColJust2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ColJust3() As String
+            Get
+                Return CType(Me("ColJust3"),String)
+            End Get
+            Set
+                Me("ColJust3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ColJust4() As String
+            Get
+                Return CType(Me("ColJust4"),String)
+            End Get
+            Set
+                Me("ColJust4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ColJust5() As String
+            Get
+                Return CType(Me("ColJust5"),String)
+            End Get
+            Set
+                Me("ColJust5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ColJust6() As String
+            Get
+                Return CType(Me("ColJust6"),String)
+            End Get
+            Set
+                Me("ColJust6") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ColJust7() As String
+            Get
+                Return CType(Me("ColJust7"),String)
+            End Get
+            Set
+                Me("ColJust7") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ColJust8() As String
+            Get
+                Return CType(Me("ColJust8"),String)
+            End Get
+            Set
+                Me("ColJust8") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ColJust9() As String
+            Get
+                Return CType(Me("ColJust9"),String)
+            End Get
+            Set
+                Me("ColJust9") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property ColJust10() As String
+            Get
+                Return CType(Me("ColJust10"),String)
+            End Get
+            Set
+                Me("ColJust10") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

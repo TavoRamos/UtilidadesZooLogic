@@ -6,6 +6,12 @@ Public Class ControlDeInventarios
         'Dim DB As New ConectarDBF(My.Settings.BDLince, My.Settings.NombreBDArt)
         'Dim ListaArts As DataTable = ConectarDBF.LlenarDGVCI(DB)
         'DGVCI.DataSource = ListaArts
+        For i = 1 To 10
+            'Dim bmp As New Drawing.Bitmap(40, 40)
+            'Dim grap As Drawing.Graphics = Drawing.Graphics.FromImage(bmp)
+            'grap.Clear(ColorTranslator.FromHtml()
+        Next
+
     End Sub
 
     Private Sub ArchivoDeTextoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ArchivoDeTextoToolStripMenuItem.Click
@@ -26,22 +32,27 @@ Public Class ControlDeInventarios
             Debug.Print("Explotando texto")
             Dim ListaArticulos As New BindingList(Of ArticuloCI)
 
-            MsgBox(Lineas(1).ToString)
             For Each linea As String In Lineas
                 Dim ArtAux = linea.Split(vbTab)
-                Dim Precio(0)
-                Precio(0) = ArtAux(4)
-                ListaArticulos.Add(New ArticuloCI(ArtAux(0), ArtAux(1), ArtAux(2), ArtAux(3), Precio, ArtAux(5), ArtAux(6)))
-
+                Dim Precio As New List(Of Decimal)
+                Precio.Add(Decimal.Parse(ArtAux(4)))
+                Dim a = New ArticuloCI(ArtAux(0).ToString.Trim, ArtAux(1), ArtAux(2), ArtAux(3), Precio, ArtAux(5), ArtAux(6))
+                a.Grupo = GrupoLince.NuevoDesdeDB(ArtAux(3))
+                ListaArticulos.Add(a)
             Next
             Dim ListaSinJus = ListaArticulos
             DGVCIJustificados.DataSource = ListaArticulos
             DGVCISinJustificar.DataSource = ListaSinJus
-            DGVCIJustificados.Columns("Grupo").DataPropertyName = "ID"
+            DGVCISinJustificar.Columns("Grupo").DataPropertyName = "ArticuloCI.GrupoLince.ID"
+            DGVCIJustificados.Columns("Grupo").DataPropertyName = "GrupoLince->ID"
             DGVCISinJustificar.Refresh()
             DGVCIJustificados.Refresh()
         Catch ex As Exception
             MsgBox(ex.Message)
         End Try
+    End Sub
+
+    Private Sub DGVCIJustificados_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGVCIJustificados.CellContentClick
+        MsgBox(DGVCIJustificados.Rows(e.RowIndex).DataBoundItem.ToString)
     End Sub
 End Class
