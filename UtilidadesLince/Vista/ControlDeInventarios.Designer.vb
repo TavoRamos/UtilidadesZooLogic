@@ -225,92 +225,102 @@ Partial Class ControlDeInventarios
         '
         'BTNJust1
         '
-        Me.BTNJust1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BTNJust1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNJust1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BTNJust1.Image = CType(resources.GetObject("BTNJust1.Image"), System.Drawing.Image)
         Me.BTNJust1.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BTNJust1.Name = "BTNJust1"
-        Me.BTNJust1.Size = New System.Drawing.Size(23, 22)
+        Me.BTNJust1.Size = New System.Drawing.Size(100, 22)
         Me.BTNJust1.Text = "ToolStripButton1"
         '
         'BTNJust2
         '
-        Me.BTNJust2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BTNJust2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNJust2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BTNJust2.Image = CType(resources.GetObject("BTNJust2.Image"), System.Drawing.Image)
         Me.BTNJust2.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BTNJust2.Name = "BTNJust2"
-        Me.BTNJust2.Size = New System.Drawing.Size(23, 22)
+        Me.BTNJust2.Size = New System.Drawing.Size(100, 22)
         Me.BTNJust2.Text = "ToolStripButton2"
         '
         'BTNJust3
         '
-        Me.BTNJust3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BTNJust3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNJust3.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BTNJust3.Image = CType(resources.GetObject("BTNJust3.Image"), System.Drawing.Image)
         Me.BTNJust3.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BTNJust3.Name = "BTNJust3"
-        Me.BTNJust3.Size = New System.Drawing.Size(23, 22)
+        Me.BTNJust3.Size = New System.Drawing.Size(100, 22)
         Me.BTNJust3.Text = "ToolStripButton3"
         '
         'BTNJust4
         '
-        Me.BTNJust4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BTNJust4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNJust4.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BTNJust4.Image = CType(resources.GetObject("BTNJust4.Image"), System.Drawing.Image)
         Me.BTNJust4.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BTNJust4.Name = "BTNJust4"
-        Me.BTNJust4.Size = New System.Drawing.Size(23, 22)
+        Me.BTNJust4.Size = New System.Drawing.Size(100, 22)
         Me.BTNJust4.Text = "ToolStripButton4"
         '
         'BTNJust5
         '
-        Me.BTNJust5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BTNJust5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNJust5.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BTNJust5.Image = CType(resources.GetObject("BTNJust5.Image"), System.Drawing.Image)
         Me.BTNJust5.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BTNJust5.Name = "BTNJust5"
-        Me.BTNJust5.Size = New System.Drawing.Size(23, 22)
+        Me.BTNJust5.Size = New System.Drawing.Size(100, 22)
         Me.BTNJust5.Text = "ToolStripButton5"
         '
         'BTNJust6
         '
-        Me.BTNJust6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BTNJust6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNJust6.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BTNJust6.Image = CType(resources.GetObject("BTNJust6.Image"), System.Drawing.Image)
         Me.BTNJust6.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BTNJust6.Name = "BTNJust6"
-        Me.BTNJust6.Size = New System.Drawing.Size(23, 22)
+        Me.BTNJust6.Size = New System.Drawing.Size(100, 22)
         Me.BTNJust6.Text = "ToolStripButton6"
         '
         'BTNJust7
         '
-        Me.BTNJust7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BTNJust7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNJust7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BTNJust7.Image = CType(resources.GetObject("BTNJust7.Image"), System.Drawing.Image)
         Me.BTNJust7.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BTNJust7.Name = "BTNJust7"
-        Me.BTNJust7.Size = New System.Drawing.Size(23, 22)
+        Me.BTNJust7.Size = New System.Drawing.Size(100, 22)
         Me.BTNJust7.Text = "ToolStripButton7"
         '
         'BTNJust8
         '
-        Me.BTNJust8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BTNJust8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNJust8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BTNJust8.Image = CType(resources.GetObject("BTNJust8.Image"), System.Drawing.Image)
         Me.BTNJust8.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BTNJust8.Name = "BTNJust8"
-        Me.BTNJust8.Size = New System.Drawing.Size(23, 22)
+        Me.BTNJust8.Size = New System.Drawing.Size(100, 22)
         Me.BTNJust8.Text = "ToolStripButton8"
         '
         'BTNJust9
         '
-        Me.BTNJust9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BTNJust9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNJust9.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BTNJust9.Image = CType(resources.GetObject("BTNJust9.Image"), System.Drawing.Image)
         Me.BTNJust9.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BTNJust9.Name = "BTNJust9"
-        Me.BTNJust9.Size = New System.Drawing.Size(23, 22)
+        Me.BTNJust9.Size = New System.Drawing.Size(100, 22)
         Me.BTNJust9.Text = "ToolStripButton9"
         '
         'BTNJust10
         '
-        Me.BTNJust10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image
+        Me.BTNJust10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None
+        Me.BTNJust10.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text
         Me.BTNJust10.Image = CType(resources.GetObject("BTNJust10.Image"), System.Drawing.Image)
         Me.BTNJust10.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.BTNJust10.Name = "BTNJust10"
-        Me.BTNJust10.Size = New System.Drawing.Size(23, 22)
+        Me.BTNJust10.Size = New System.Drawing.Size(106, 19)
         Me.BTNJust10.Text = "ToolStripButton10"
         '
         'ToolStripSeparator1

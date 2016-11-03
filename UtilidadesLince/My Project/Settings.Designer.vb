@@ -209,6 +209,126 @@ Namespace My
                 Me("ColJust10") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Just1() As String
+            Get
+                Return CType(Me("Just1"),String)
+            End Get
+            Set
+                Me("Just1") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Just2() As String
+            Get
+                Return CType(Me("Just2"),String)
+            End Get
+            Set
+                Me("Just2") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Just3() As String
+            Get
+                Return CType(Me("Just3"),String)
+            End Get
+            Set
+                Me("Just3") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Just4() As String
+            Get
+                Return CType(Me("Just4"),String)
+            End Get
+            Set
+                Me("Just4") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Just5() As String
+            Get
+                Return CType(Me("Just5"),String)
+            End Get
+            Set
+                Me("Just5") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Just6() As String
+            Get
+                Return CType(Me("Just6"),String)
+            End Get
+            Set
+                Me("Just6") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Just7() As String
+            Get
+                Return CType(Me("Just7"),String)
+            End Get
+            Set
+                Me("Just7") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Just8() As String
+            Get
+                Return CType(Me("Just8"),String)
+            End Get
+            Set
+                Me("Just8") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Just9() As String
+            Get
+                Return CType(Me("Just9"),String)
+            End Get
+            Set
+                Me("Just9") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("")>  _
+        Public Property Just10() As String
+            Get
+                Return CType(Me("Just10"),String)
+            End Get
+            Set
+                Me("Just10") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

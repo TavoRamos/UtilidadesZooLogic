@@ -26,73 +26,74 @@
 
         If Not String.IsNullOrWhiteSpace(My.Settings.ColJust1) Then
             PictureBox1.BackColor = ColorTranslator.FromHtml(My.Settings.ColJust1)
-            Label11.Text = My.Settings.ColJust1.ToString
+            LBL1.Text = My.Settings.ColJust1.ToString
         Else
             PictureBox1.BackColor = Color.Empty
-            Label11.Text = "Sin color asignado"
+            LBL1.Text = "Sin color asignado"
         End If
+
         If Not String.IsNullOrWhiteSpace(My.Settings.ColJust2) Then
             PictureBox2.BackColor = ColorTranslator.FromHtml(My.Settings.ColJust2)
-            Label12.Text = My.Settings.ColJust2.ToString
+            LBL2.Text = My.Settings.ColJust2.ToString
         Else
             PictureBox2.BackColor = Color.Empty
-            Label12.Text = "Sin color asignado"
+            LBL2.Text = "Sin color asignado"
         End If
+
         If Not String.IsNullOrWhiteSpace(My.Settings.ColJust3) Then
             PictureBox3.BackColor = ColorTranslator.FromHtml(My.Settings.ColJust3)
-            Label13.Text = My.Settings.ColJust3.ToString
+            LBL3.Text = My.Settings.ColJust3.ToString
         Else
             PictureBox3.BackColor = Color.Empty
-            Label13.Text = "Sin color asignado"
+            LBL3.Text = "Sin color asignado"
         End If
+
         If Not String.IsNullOrWhiteSpace(My.Settings.ColJust4) Then
             PictureBox4.BackColor = ColorTranslator.FromHtml(My.Settings.ColJust4)
-            Label4.Text = My.Settings.ColJust4.ToString
+            LBL5.Text = My.Settings.ColJust4.ToString
         Else
             PictureBox4.BackColor = Color.Empty
-            Label4.Text = "Sin color asignado"
+            LBL5.Text = "Sin color asignado"
         End If
+
         If Not String.IsNullOrWhiteSpace(My.Settings.ColJust5) Then
             PictureBox5.BackColor = ColorTranslator.FromHtml(My.Settings.ColJust5)
-            Label5.Text = My.Settings.ColJust5.ToString
+            LBL6.Text = My.Settings.ColJust5.ToString
         Else
             PictureBox5.BackColor = Color.Empty
-            Label5.Text = "Sin color asignado"
+            LBL6.Text = "Sin color asignado"
         End If
+
         If Not String.IsNullOrWhiteSpace(My.Settings.ColJust6) Then
             PictureBox6.BackColor = ColorTranslator.FromHtml(My.Settings.ColJust6)
-            Label6.Text = My.Settings.ColJust6.ToString
+            LBL7.Text = My.Settings.ColJust6.ToString
         Else
             PictureBox6.BackColor = Color.Empty
-            Label6.Text = "Sin color asignado"
+            LBL7.Text = "Sin color asignado"
         End If
+
         If Not String.IsNullOrWhiteSpace(My.Settings.ColJust7) Then
             PictureBox7.BackColor = ColorTranslator.FromHtml(My.Settings.ColJust7)
-            Label7.Text = My.Settings.ColJust7.ToString
+            LBL8.Text = My.Settings.ColJust7.ToString
         Else
             PictureBox7.BackColor = Color.Empty
-            Label7.Text = "Sin color asignado"
+            LBL8.Text = "Sin color asignado"
         End If
+
         If Not String.IsNullOrWhiteSpace(My.Settings.ColJust8) Then
             PictureBox8.BackColor = ColorTranslator.FromHtml(My.Settings.ColJust8)
-            Label8.Text = My.Settings.ColJust8.ToString
+            LBL9.Text = My.Settings.ColJust8.ToString
         Else
             PictureBox8.BackColor = Color.Empty
-            Label8.Text = "Sin color asignado"
+            LBL9.Text = "Sin color asignado"
         End If
+
         If Not String.IsNullOrWhiteSpace(My.Settings.ColJust9) Then
             PictureBox9.BackColor = ColorTranslator.FromHtml(My.Settings.ColJust9)
-            Label9.Text = My.Settings.ColJust1.ToString
+            LBL10.Text = My.Settings.ColJust1.ToString
         Else
             PictureBox9.BackColor = Color.Empty
-            Label9.Text = "Sin color asignado"
-        End If
-        If Not String.IsNullOrWhiteSpace(My.Settings.ColJust10) Then
-            PictureBox10.BackColor = ColorTranslator.FromHtml(My.Settings.ColJust10)
-            Label10.Text = My.Settings.ColJust1.ToString
-        Else
-            PictureBox10.BackColor = Color.Empty
-            Label10.Text = "Sin color asignado"
+            LBL10.Text = "Sin color asignado"
         End If
     End Sub
 
@@ -108,7 +109,17 @@
 
     Private Sub PictureBox9_BackColorChanged(sender As Object, e As EventArgs) Handles PictureBox1.BackColorChanged, PictureBox2.BackColorChanged, PictureBox3.BackColorChanged, PictureBox4.BackColorChanged, PictureBox5.BackColorChanged, PictureBox6.BackColorChanged, PictureBox7.BackColorChanged, PictureBox8.BackColorChanged, PictureBox9.BackColorChanged, PictureBox10.BackColorChanged
         If sender.BackColor <> Color.Empty Then
-
+            My.Settings.ColJust1 = ColorTranslator.ToHtml(PictureBox1.BackColor)
+            My.Settings.ColJust2 = ColorTranslator.ToHtml(PictureBox2.BackColor)
+            My.Settings.ColJust3 = ColorTranslator.ToHtml(PictureBox3.BackColor)
+            My.Settings.ColJust4 = ColorTranslator.ToHtml(PictureBox4.BackColor)
+            My.Settings.ColJust5 = ColorTranslator.ToHtml(PictureBox5.BackColor)
+            My.Settings.ColJust6 = ColorTranslator.ToHtml(PictureBox6.BackColor)
+            My.Settings.ColJust7 = ColorTranslator.ToHtml(PictureBox7.BackColor)
+            My.Settings.ColJust8 = ColorTranslator.ToHtml(PictureBox8.BackColor)
+            My.Settings.ColJust9 = ColorTranslator.ToHtml(PictureBox9.BackColor)
+            My.Settings.ColJust10 = ColorTranslator.ToHtml(PictureBox10.BackColor)
         End If
+        My.Settings.Save()
     End Sub
 End Class
