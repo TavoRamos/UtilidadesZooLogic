@@ -8,6 +8,7 @@ Public Class ArticuloCI
     Public Property Talle As String
     Public Property Area As AreaCI
     Public Property JustificadoCon As ArticuloCI
+    Public Property TipoJustificacion As Byte
     Public Property Observacion As String
 
     Public Sub New(ByRef codigo As String, ByRef descripcion As String, ByRef talle As String, ByRef grupo As String, ByRef Precio As List(Of Decimal), ByRef sistema As Integer, ByRef fisico As Integer _

@@ -32,6 +32,16 @@ Partial Class Configuracion
         Me.BTNPathDB = New System.Windows.Forms.Button()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.TabCI = New System.Windows.Forms.TabPage()
+        Me.TXTJust10 = New System.Windows.Forms.TextBox()
+        Me.TXTJust9 = New System.Windows.Forms.TextBox()
+        Me.TXTJust8 = New System.Windows.Forms.TextBox()
+        Me.TXTJust7 = New System.Windows.Forms.TextBox()
+        Me.TXTJust6 = New System.Windows.Forms.TextBox()
+        Me.TXTJust5 = New System.Windows.Forms.TextBox()
+        Me.TXTJust4 = New System.Windows.Forms.TextBox()
+        Me.TXTJust3 = New System.Windows.Forms.TextBox()
+        Me.TXTJust2 = New System.Windows.Forms.TextBox()
+        Me.TXTJust1 = New System.Windows.Forms.TextBox()
         Me.LBL3 = New System.Windows.Forms.Label()
         Me.LBL2 = New System.Windows.Forms.Label()
         Me.PictureBox10 = New System.Windows.Forms.PictureBox()
@@ -52,7 +62,6 @@ Partial Class Configuracion
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.LBL4 = New System.Windows.Forms.Label()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.TabPage2 = New System.Windows.Forms.TabPage()
         Me.ColorDialog1 = New System.Windows.Forms.ColorDialog()
         CType(Me.SplitContainer1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SplitContainer1.Panel1.SuspendLayout()
@@ -146,7 +155,6 @@ Partial Class Configuracion
         'TabControl1
         '
         Me.TabControl1.Controls.Add(Me.TabCI)
-        Me.TabControl1.Controls.Add(Me.TabPage2)
         Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.TabControl1.Location = New System.Drawing.Point(0, 0)
         Me.TabControl1.Name = "TabControl1"
@@ -156,6 +164,16 @@ Partial Class Configuracion
         '
         'TabCI
         '
+        Me.TabCI.Controls.Add(Me.TXTJust10)
+        Me.TabCI.Controls.Add(Me.TXTJust9)
+        Me.TabCI.Controls.Add(Me.TXTJust8)
+        Me.TabCI.Controls.Add(Me.TXTJust7)
+        Me.TabCI.Controls.Add(Me.TXTJust6)
+        Me.TabCI.Controls.Add(Me.TXTJust5)
+        Me.TabCI.Controls.Add(Me.TXTJust4)
+        Me.TabCI.Controls.Add(Me.TXTJust3)
+        Me.TabCI.Controls.Add(Me.TXTJust2)
+        Me.TabCI.Controls.Add(Me.TXTJust1)
         Me.TabCI.Controls.Add(Me.LBL3)
         Me.TabCI.Controls.Add(Me.LBL2)
         Me.TabCI.Controls.Add(Me.PictureBox10)
@@ -181,8 +199,78 @@ Partial Class Configuracion
         Me.TabCI.Padding = New System.Windows.Forms.Padding(3)
         Me.TabCI.Size = New System.Drawing.Size(376, 249)
         Me.TabCI.TabIndex = 0
-        Me.TabCI.Text = "TabPage1"
+        Me.TabCI.Text = "Control de Inventarios"
         Me.TabCI.UseVisualStyleBackColor = True
+        '
+        'TXTJust10
+        '
+        Me.TXTJust10.Location = New System.Drawing.Point(128, 218)
+        Me.TXTJust10.Name = "TXTJust10"
+        Me.TXTJust10.Size = New System.Drawing.Size(240, 20)
+        Me.TXTJust10.TabIndex = 31
+        '
+        'TXTJust9
+        '
+        Me.TXTJust9.Location = New System.Drawing.Point(128, 197)
+        Me.TXTJust9.Name = "TXTJust9"
+        Me.TXTJust9.Size = New System.Drawing.Size(240, 20)
+        Me.TXTJust9.TabIndex = 30
+        '
+        'TXTJust8
+        '
+        Me.TXTJust8.Location = New System.Drawing.Point(128, 176)
+        Me.TXTJust8.Name = "TXTJust8"
+        Me.TXTJust8.Size = New System.Drawing.Size(240, 20)
+        Me.TXTJust8.TabIndex = 29
+        '
+        'TXTJust7
+        '
+        Me.TXTJust7.Location = New System.Drawing.Point(128, 155)
+        Me.TXTJust7.Name = "TXTJust7"
+        Me.TXTJust7.Size = New System.Drawing.Size(240, 20)
+        Me.TXTJust7.TabIndex = 28
+        '
+        'TXTJust6
+        '
+        Me.TXTJust6.Location = New System.Drawing.Point(128, 133)
+        Me.TXTJust6.Name = "TXTJust6"
+        Me.TXTJust6.Size = New System.Drawing.Size(240, 20)
+        Me.TXTJust6.TabIndex = 27
+        '
+        'TXTJust5
+        '
+        Me.TXTJust5.Location = New System.Drawing.Point(128, 112)
+        Me.TXTJust5.Name = "TXTJust5"
+        Me.TXTJust5.Size = New System.Drawing.Size(240, 20)
+        Me.TXTJust5.TabIndex = 26
+        '
+        'TXTJust4
+        '
+        Me.TXTJust4.Location = New System.Drawing.Point(128, 91)
+        Me.TXTJust4.Name = "TXTJust4"
+        Me.TXTJust4.Size = New System.Drawing.Size(240, 20)
+        Me.TXTJust4.TabIndex = 25
+        '
+        'TXTJust3
+        '
+        Me.TXTJust3.Location = New System.Drawing.Point(128, 70)
+        Me.TXTJust3.Name = "TXTJust3"
+        Me.TXTJust3.Size = New System.Drawing.Size(240, 20)
+        Me.TXTJust3.TabIndex = 24
+        '
+        'TXTJust2
+        '
+        Me.TXTJust2.Location = New System.Drawing.Point(128, 49)
+        Me.TXTJust2.Name = "TXTJust2"
+        Me.TXTJust2.Size = New System.Drawing.Size(240, 20)
+        Me.TXTJust2.TabIndex = 23
+        '
+        'TXTJust1
+        '
+        Me.TXTJust1.Location = New System.Drawing.Point(128, 28)
+        Me.TXTJust1.Name = "TXTJust1"
+        Me.TXTJust1.Size = New System.Drawing.Size(240, 20)
+        Me.TXTJust1.TabIndex = 22
         '
         'LBL3
         '
@@ -364,16 +452,6 @@ Partial Class Configuracion
         Me.PictureBox1.TabIndex = 0
         Me.PictureBox1.TabStop = False
         '
-        'TabPage2
-        '
-        Me.TabPage2.Location = New System.Drawing.Point(4, 22)
-        Me.TabPage2.Name = "TabPage2"
-        Me.TabPage2.Padding = New System.Windows.Forms.Padding(3)
-        Me.TabPage2.Size = New System.Drawing.Size(376, 272)
-        Me.TabPage2.TabIndex = 1
-        Me.TabPage2.Text = "TabPage2"
-        Me.TabPage2.UseVisualStyleBackColor = True
-        '
         'Configuracion
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -429,11 +507,20 @@ Partial Class Configuracion
     Friend WithEvents PictureBox2 As PictureBox
     Friend WithEvents LBL4 As Label
     Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents TabPage2 As TabPage
     Friend WithEvents LBL3 As Label
     Friend WithEvents LBL2 As Label
     Friend WithEvents PictureBox10 As PictureBox
     Friend WithEvents LBL1 As Label
     Friend WithEvents PictureBox9 As PictureBox
     Friend WithEvents ColorDialog1 As ColorDialog
+    Friend WithEvents TXTJust10 As TextBox
+    Friend WithEvents TXTJust9 As TextBox
+    Friend WithEvents TXTJust8 As TextBox
+    Friend WithEvents TXTJust7 As TextBox
+    Friend WithEvents TXTJust6 As TextBox
+    Friend WithEvents TXTJust5 As TextBox
+    Friend WithEvents TXTJust4 As TextBox
+    Friend WithEvents TXTJust3 As TextBox
+    Friend WithEvents TXTJust2 As TextBox
+    Friend WithEvents TXTJust1 As TextBox
 End Class

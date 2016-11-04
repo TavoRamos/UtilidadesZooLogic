@@ -95,6 +95,65 @@
             PictureBox9.BackColor = Color.Empty
             LBL10.Text = "Sin color asignado"
         End If
+        '*************************** CONTROL DE INVENTARIOS - JUSTIFICACIONES - TEXTO
+        If Not String.IsNullOrWhiteSpace(My.Settings.Just1) Then
+            TXTJust1.Text = My.Settings.Just1
+        Else
+            TXTJust1.Text = ""
+        End If
+
+        If Not String.IsNullOrWhiteSpace(My.Settings.Just2) Then
+            TXTJust2.Text = My.Settings.Just2
+        Else
+            TXTJust2.Text = ""
+        End If
+
+        If Not String.IsNullOrWhiteSpace(My.Settings.Just3) Then
+            TXTJust3.Text = My.Settings.Just3
+        Else
+            TXTJust3.Text = ""
+        End If
+
+        If Not String.IsNullOrWhiteSpace(My.Settings.Just4) Then
+            TXTJust4.Text = My.Settings.Just4
+        Else
+            TXTJust4.Text = ""
+        End If
+
+        If Not String.IsNullOrWhiteSpace(My.Settings.Just5) Then
+            TXTJust5.Text = My.Settings.Just5
+        Else
+            TXTJust5.Text = ""
+        End If
+
+        If Not String.IsNullOrWhiteSpace(My.Settings.Just6) Then
+            TXTJust6.Text = My.Settings.Just6
+        Else
+            TXTJust6.Text = ""
+        End If
+
+        If Not String.IsNullOrWhiteSpace(My.Settings.Just7) Then
+            TXTJust7.Text = My.Settings.Just7
+        Else
+            TXTJust7.Text = ""
+        End If
+
+        If Not String.IsNullOrWhiteSpace(My.Settings.Just8) Then
+            TXTJust8.Text = My.Settings.Just8
+        Else
+            TXTJust8.Text = ""
+        End If
+
+        If Not String.IsNullOrWhiteSpace(My.Settings.Just9) Then
+            TXTJust9.Text = My.Settings.Just9
+        Else
+            TXTJust9.Text = ""
+        End If
+        If Not String.IsNullOrWhiteSpace(My.Settings.Just10) Then
+            TXTJust10.Text = My.Settings.Just10
+        Else
+            TXTJust10.Text = ""
+        End If
     End Sub
 
     Private Sub TXTNombreDBArt_TextChanged(sender As Object, e As EventArgs)
@@ -121,5 +180,18 @@
             My.Settings.ColJust10 = ColorTranslator.ToHtml(PictureBox10.BackColor)
         End If
         My.Settings.Save()
+    End Sub
+
+    Private Sub TXTJust_TextChanged(sender As Object, e As EventArgs) Handles TXTJust1.TextChanged, TXTJust2.TextChanged, TXTJust3.TextChanged, TXTJust4.TextChanged, TXTJust5.TextChanged, TXTJust6.TextChanged, TXTJust7.TextChanged, TXTJust8.TextChanged, TXTJust9.TextChanged, TXTJust10.TextChanged
+        My.Settings.Just1 = TXTJust1.Text
+        My.Settings.Just2 = TXTJust2.Text
+        My.Settings.Just3 = TXTJust3.Text
+        My.Settings.Just4 = TXTJust4.Text
+        My.Settings.Just5 = TXTJust5.Text
+        My.Settings.Just6 = TXTJust6.Text
+        My.Settings.Just7 = TXTJust7.Text
+        My.Settings.Just8 = TXTJust8.Text
+        My.Settings.Just9 = TXTJust9.Text
+        My.Settings.Just10 = TXTJust10.Text
     End Sub
 End Class
